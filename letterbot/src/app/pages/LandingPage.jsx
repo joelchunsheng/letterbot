@@ -1,4 +1,5 @@
 import React from 'react'
+import SignIn from '../components/SignIn/SignIn';
 
 
 class LandingPage extends React.Component {
@@ -7,7 +8,11 @@ class LandingPage extends React.Component {
     }
 
     render() {
-        return(<h1>LandingPage</h1>)
+        return(
+            <div>
+                <SignIn/>
+            </div>
+        )
     }
 }
 

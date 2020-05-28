@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap');
+
+.signInContainer{
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+    width: 30%;
+    height: 400px;
+    background: #FFF;
+    border-radius: 7px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.15);
+    margin: 8% auto;
+    padding: 25px 0 0 0;
+}
+
+.signInHeading{
+    margin-bottom: 30px;
+}
+
+.signInHeading h1{
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+.signInHeading p{
+    font-size: 14px;
+}
+.login-form{
+    padding: 0 2.5em;
+}
+
+.login-form input {
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.login-form input:focus {
+    outline: none;
+}
+
+.login-form p{
+    color: #3D5A80;
+    font-weight: 700;
+    text-align: left;
+    font-size: 12px;
+}
+
+.login-form p a:hover{
+    color: #293241;
+    cursor: pointer;
+}
+
+
+.login-form button {
+    text-transform: uppercase;
+    background: #3D5A80;
+    color: #FFFFFF;
+    width: 30%;
+    font-size: 12px;
+    outline: 0;
+    border: 0;
+    border-radius: 6px;
+    padding: 10px 20px;
+    cursor: pointer;
+    float: right;
+}
+
+.login-form button:hover {
+    background: #293241;
+}
+
+
+
+
+
+
+
+
+
+
