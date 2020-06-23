@@ -1,4 +1,5 @@
 import React from 'react'
+import fire from '../../config/Fire'
 
 
 class Dashboard extends React.Component {
@@ -7,7 +8,12 @@ class Dashboard extends React.Component {
     }
 
     render() {
-        return(<h1>Dashboard Page</h1>)
+        return(
+            <div>
+                <h1>Dashboard Page</h1>
+                <button onClick={() => fire.auth().signOut()}>SignOut</button>
+            </div>
+)
     }
 }
 

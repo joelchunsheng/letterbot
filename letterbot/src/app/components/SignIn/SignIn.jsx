@@ -1,15 +1,26 @@
-import React from 'react'
+import React, { Component } from 'react'
 import fire from '../../../config/Fire';
+import { withRouter } from "react-router";
 import './SignIn.css';
 
 
-class SignIn extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            user:{},
+class SignIn extends Component {
+    // constructor(props) {
+    //     super(props);
+    // }
+
+    handleSignIn = async event => {
+        event.preventDefault();
+        const { email, password } = event.target.elements;
+        try {
+          const user = await fire
+            .auth()
+            .signInWithEmailAndPassword(email.value, password.value);
+          this.props.history.push("/dashboard");
+        } catch (error) {
+          alert(error);
         }
-    }
+      };
 
     render() {
         return(
@@ -19,13 +30,13 @@ class SignIn extends React.Component {
                     <p>Delivering mails and documents to you.</p>
                 </div>
 
-                <form class="login-form">
-                    <input type="text" placeholder="email"/>
-                    <input type="password" placeholder="password"/>
+                <form onSubmit={this.handleSignIn} class="login-form">
+                    <input onChange={this.handleChange} id="email" type="email" placeholder="email"/>
+                    <input onChange={this.handleChange} id="password" type="password" placeholder="password"/>
                     <p>
                     <a>Forgot password?</a>
                     </p>
-                    <button>login</button>
+                    <button type="submit">login</button>
                 </form>
 
             </div>
@@ -33,4 +44,4 @@ class SignIn extends React.Component {
     }
 }
 
-export default SignIn;
+export default withRouter(SignIn);

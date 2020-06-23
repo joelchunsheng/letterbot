@@ -1,5 +1,5 @@
-import React from 'react'
-import { HashRouter, Route } from 'react-router-dom'
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import LandingPage from './app/pages/LandingPage'
 import Dashboard from './app/pages/Dashboard'
@@ -8,49 +8,111 @@ import ManualControl from './app/pages/ManualControl'
 import Settings from './app/pages/Settings'
 import Task from './app/pages/Task'
 import Users from './app/pages/Users'
+import fire from "./config/Fire"
 
 import Navbar from './app/components/navbar/navbar'
+import PrivateRoute from './PrivateRoute'
 
-const AppLayout = () => {
-    return(
-        <HashRouter>
 
-            <Route exact path="/">
-                <LandingPage />
-            </Route>
+class app extends Component{
+    state = { loading: true, authenticated: false, user: null };
 
-            <Route path="/dashboard">
-                {/* <Navbar /> */}
-                <Dashboard />
-            </Route>
+    componentWillMount() {
+        fire.auth().onAuthStateChanged(user => {
+          if (user) {
+            this.setState({
+              authenticated: true,
+              currentUser: user,
+              loading: false
+            });
+          } else {
+            this.setState({
+              authenticated: false,
+              currentUser: null,
+              loading: false
+            });
+          }
+        });
+      }
 
-            <Route path="/endpoints">
-                {/* <Navbar /> */}
-                <EndPoints />
-            </Route>
+    render(){
+        const { authenticated, loading } = this.state;
 
-            <Route path="/manualcontrol">
-                {/* <Navbar /> */}
-                <ManualControl />
-            </Route>
+        if (loading) {
+            return <p>Loading..</p>;
+        }
 
-            <Route path="/settings">
-                {/* <Navbar /> */}
-                <Settings />
-            </Route>
+        return(
+            <Router>
+                <div>
+                    <Route exact path="/" component={LandingPage} />
 
-            <Route path="/task">
-                {/* <Navbar /> */}
-                <Task />
-            </Route>
+                    <PrivateRoute path="/dashboard" component={Dashboard} authenticated={authenticated} />
 
-            <Route path="/users">
-                {/* <Navbar /> */}
-                <Users />
-            </Route>
+                    <PrivateRoute path="/endpoints" component={EndPoints} authenticated={authenticated} />
 
-        </HashRouter>
-    )
-}
+                    <PrivateRoute path="/manualcontrol" component={ManualControl} authenticated={authenticated} />
 
-export default AppLayout;
+                    <PrivateRoute path="/settings" component={Settings} authenticated={authenticated} />
+
+                    <PrivateRoute path="/task" component={Task} authenticated={authenticated} />
+
+                    <PrivateRoute path="/users" component={Users} authenticated={authenticated} />
+                    
+                </div>
+
+        </Router> 
+        )
+    }
+} 
+
+// const AppLayout = () => {
+
+//     return(
+
+//         <AuthProvider>
+
+//         <Router>
+//             <div>
+//                 <PrivateRoute exact path="/" authenticated={authenticated}>
+//                     <LandingPage />
+//                 </PrivateRoute>
+
+//                 <Route path="/dashboard">
+//                     {/* <Navbar /> */}
+//                     <Dashboard />
+//                 </Route>
+
+//                 <Route path="/endpoints">
+//                     {/* <Navbar /> */}
+//                     <EndPoints />
+//                 </Route>
+
+//                 <Route path="/manualcontrol">
+//                     {/* <Navbar /> */}
+//                     <ManualControl />
+//                 </Route>
+
+//                 <Route path="/settings">
+//                     {/* <Navbar /> */}
+//                     <Settings />
+//                 </Route>
+
+//                 <Route path="/task">
+//                     {/* <Navbar /> */}
+//                     <Task />
+//                 </Route>
+
+//                 <Route path="/users">
+//                     {/* <Navbar /> */}
+//                     <Users />
+//                 </Route>
+//             </div>
+
+
+//         </Router>
+//         </AuthProvider>
+//     )
+// }
+
+export default app;
