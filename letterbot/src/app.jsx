@@ -13,6 +13,8 @@ import fire from "./config/Fire"
 import Navbar from './app/components/navbar/navbar'
 import PrivateRoute from './PrivateRoute'
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 class app extends Component{
     state = { loading: true, authenticated: false, user: null };
