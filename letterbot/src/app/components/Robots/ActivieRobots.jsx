@@ -4,10 +4,10 @@ import fire from '../../../config/Fire';
 import {Link} from 'react-router-dom'
 
 
-class ShowRobots extends React.Component {
+class ActiveRobots extends React.Component {
     constructor(props) {
         super(props)
-        this.ref = fire.firestore().collection("Robot").orderBy("name", "asc")
+        this.ref = fire.firestore().collection("Robot").where("status", "==", "Running")
         this.unsubscribe = null
         this.state ={
             robots : []
@@ -21,13 +21,12 @@ class ShowRobots extends React.Component {
     onCollectionUpdate = (querySnapshot) => {
         const robots = []
         querySnapshot.forEach((doc) => {
-            const {name, id, status} = doc.data()
+            const {name, currentTask} = doc.data()
             robots.push({
                key: doc.id,
                doc,
                name,
-               id,
-               status 
+               currentTask 
             })
         })
         this.setState({
@@ -43,9 +42,8 @@ class ShowRobots extends React.Component {
                         <tr>
                         {/* <th>#</th> */}
                         <th>Name</th>
-                        <th>Robot ID</th>
-                        <th>Status</th>
-                        <th>Action</th>
+                        <th>Current Task</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -53,13 +51,7 @@ class ShowRobots extends React.Component {
 
                         <tr>
                             <td>{robot.name}</td>
-                            <td>{robot.key}</td>
-                            <td>{robot.status}</td>
-                            <td>
-                                <Link to={`/task/${robot.key}`}>Assign task</Link>
-                                <Link to={`/manualcontrol/${robot.key}`}>Manual control</Link>
-                            </td>
-
+                            <td>{robot.currentTask}</td>
                         </tr>
                         )}
 
@@ -70,4 +62,4 @@ class ShowRobots extends React.Component {
     }
 }
 
-export default ShowRobots;
+export default ActiveRobots;
