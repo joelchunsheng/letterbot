@@ -2,6 +2,8 @@ import React from 'react'
 import { Container, Row, Col, Navbar } from 'react-bootstrap';
 import './pages.css';
 import NavigationBar from '../components/navbar/navbar'
+import ShowEndpoints from '../components/Endpoints/ShowEndpoints';
+import AddEndpoint from '../components/Endpoints/AddEndpoint';
 
 
 class EndPoints extends React.Component {
@@ -18,6 +20,8 @@ class EndPoints extends React.Component {
                     </Col>
                     <Col  xs={10} id="page-content-wrapper">
                         <h1 className="pageName">End Points Page</h1>
+                        <ShowEndpoints/>
+                        <AddEndpoint/>
                     </Col> 
                 </Row>
             </Container>
