@@ -7,3 +7,10 @@
     letter-spacing: 0.7px;
     margin-top: 5%;
 }
+
+.taskborder{
+    border: 1px solid rgb(216, 216, 216);
+    border-radius: 3px;
+    padding: 10px;
+
+}

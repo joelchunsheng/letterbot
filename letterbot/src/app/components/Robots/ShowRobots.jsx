@@ -56,7 +56,7 @@ class ShowRobots extends React.Component {
                             <td>{robot.key}</td>
                             <td>{robot.status}</td>
                             <td>
-                                <Link to={`/task/${robot.key}`}>Assign task</Link>
+                                <Link to={`/task#${robot.key}`}>Assign task</Link>
                                 <Link to={`/manualcontrol/${robot.key}`}>Manual control</Link>
                             </td>
 
