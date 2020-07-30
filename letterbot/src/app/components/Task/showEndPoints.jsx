@@ -37,6 +37,16 @@ class ShowEndpoints extends React.Component {
         })
     }
 
+    // this only adds endpoint to robot 2
+    // need to figure out how to add to selected robot
+    // also need to push with a time stemp
+    add(EndPoint){
+        fire.firestore().collection("Robot").doc("xFjz0vEXOC3n1afbxnsa").collection("Task").add({
+            EndPoint
+        })
+    }
+
+
     render() {
         return(
             <div>
@@ -44,7 +54,8 @@ class ShowEndpoints extends React.Component {
                     <Card.Header as="h5">Choose the next destination</Card.Header>
                         {this.state.endpoints.map(endpoint =>
                         <ListGroup variant="flush">
-                            <ListGroup.Item><Button variant="primary" className="buttonSize"><FontAwesomeIcon icon={faPlus} size="sm" className="iconSize"/></Button> {endpoint.location}</ListGroup.Item>
+                            <ListGroup.Item>
+                                <Button variant="primary" className="buttonSize" onClick={this.add.bind(this, endpoint.location)}><FontAwesomeIcon icon={faPlus} size="sm" className="iconSize"/></Button> {endpoint.location}</ListGroup.Item>
                         </ListGroup>
                             )}
                 </Card>
