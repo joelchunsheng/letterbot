@@ -4,6 +4,7 @@ import './pages.css';
 import fire from '../../config/Fire';
 import NavigationBar from '../components/navbar/navbar'
 import UpcomingRobotTasks from '../components/Robots/UpcomingRobotTasks'
+import ShowEndPoints from '../components/Task/showEndPoints'
 
 class Task extends React.Component {
     constructor(props) {
@@ -58,16 +59,25 @@ class Task extends React.Component {
                                 </ListGroup>
                                 )}
                                 </Col>
-                                <Col sm={8}>
-                                {this.state.robots.map(robot =>
-                                <Tab.Content>
-                                    <Tab.Pane eventKey={`#${robot.key}`} className="taskborder">
-                                    <h3>Status : {robot.status}</h3>
-                                    <p>Current Task : {robot.currentTask}</p>
-                                    <UpcomingRobotTasks valueFromParent={robot.key}/>
-                                    </Tab.Pane>
-                                </Tab.Content>
-                                )}
+                                <Col sm={5}>
+                                    {this.state.robots.map(robot =>
+                                    <Tab.Content>
+                                        <Tab.Pane eventKey={`#${robot.key}`} className="taskborder">
+                                        <h3>Status : {robot.status}</h3>
+                                        <p>Current Task : {robot.currentTask}</p>
+                                        <UpcomingRobotTasks valueFromParent={robot.key}/>
+                                        </Tab.Pane>
+                                    </Tab.Content>
+                                    )}
+                                </Col>
+                                <Col sm={3}>
+                                    {this.state.robots.map(robot =>
+                                    <Tab.Content>
+                                        <Tab.Pane eventKey={`#${robot.key}`}>
+                                        <ShowEndPoints/>
+                                        </Tab.Pane>
+                                    </Tab.Content>
+                                    )}
                                 </Col>
                             </Row>
                         </Tab.Container>
