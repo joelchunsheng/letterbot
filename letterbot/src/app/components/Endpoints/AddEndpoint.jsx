@@ -41,7 +41,7 @@ class AddEndpoint extends React.Component {
             <div>
                 <form onSubmit={this.onSubmit}>
                     <input type="text" value={location} name="location" onChange={this.onChange}/>
-                    <button type="submit">Submit</button>
+                    <button class="btn btn-success" type="submit">Submit</button>
                 </form>
             </div>
             

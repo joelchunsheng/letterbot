@@ -34,13 +34,13 @@ class ShowEndpoints extends React.Component {
         })
     }
 
-    // delete(id){
-    //     fire.firestore().collection("cities").doc("TZ1GAR3JVJ8pezqV3FE3").delete().then(function() {
-    //         console.log("Document successfully deleted!");
-    //     }).catch(function(error) {
-    //         console.error("Error removing document: ", error);
-    //     });
-    //   }
+    delete(id){
+        fire.firestore().collection('Endpoints').doc(id).delete().then(() => {
+          console.log("Document successfully deleted!");
+        }).catch((error) => {
+          console.error("Error removing document: ", error);
+        });
+      }
 
     render() {
         return(
@@ -59,7 +59,7 @@ class ShowEndpoints extends React.Component {
                             <td>{endpoint.location}</td>
                             <td>{endpoint.key}</td>
                             <td>
-                                <button onClick={this.delete}>Delete</button>
+                                <button class="btn btn-danger" onClick={this.delete.bind(this, endpoint.key)}>Delete</button>
                             </td>
                         </tr>
                         )}
