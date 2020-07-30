@@ -4,13 +4,13 @@ import fire from '../../../config/Fire';
 import {Link} from 'react-router-dom'
 
 
-class ShowEndpoints extends React.Component {
+class ShowUsers extends React.Component {
     constructor(props) {
         super(props)
-        this.ref = fire.firestore().collection("Endpoints").orderBy("location", "asc")
+        this.ref = fire.firestore().collection("User").orderBy("name", "asc")
         this.unsubscribe = null
         this.state ={
-            endpoints : []
+            users : []
         }
     }
 
@@ -19,28 +19,20 @@ class ShowEndpoints extends React.Component {
     }
 
     onCollectionUpdate = (querySnapshot) => {
-        const endpoints = []
+        const users = []
         querySnapshot.forEach((doc) => {
-            const {location, id} = doc.data()
-            endpoints.push({
+            const {name, email} = doc.data()
+            users.push({
                key: doc.id,
                doc,
-               location,
-               id
+               name,
+               email 
             })
         })
         this.setState({
-            endpoints
+            users
         })
     }
-
-    delete(id){
-        fire.firestore().collection('Endpoints').doc(id).delete().then(() => {
-          console.log("Document successfully deleted!");
-        }).catch((error) => {
-          console.error("Error removing document: ", error);
-        });
-      }
 
     render() {
         return(
@@ -48,19 +40,19 @@ class ShowEndpoints extends React.Component {
                 <Table striped bordered hover variant="dark">
                     <thead>
                         <tr>
+                        {/* <th>#</th> */}
                         <th>Name</th>
-                        <th>Endpoint ID</th>
+                        <th>User ID</th>
+                        <th>Email</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {this.state.endpoints.map(endpoint =>
+                        {this.state.users.map(user =>
 
                         <tr>
-                            <td>{endpoint.location}</td>
-                            <td>{endpoint.key}</td>
-                            <td>
-                                <button class="btn btn-danger" onClick={this.delete.bind(this, endpoint.key)}>Delete</button>
-                            </td>
+                            <td>{user.name}</td>
+                            <td>{user.key}</td>
+                            <td>{user.email}</td>
                         </tr>
                         )}
 
@@ -71,4 +63,4 @@ class ShowEndpoints extends React.Component {
     }
 }
 
-export default ShowEndpoints;
+export default ShowUsers;
