@@ -37,7 +37,7 @@ class ShowUsers extends React.Component {
     render() {
         return(
             <div>
-                <Table striped bordered hover variant="dark">
+                <Table responsive>
                     <thead>
                         <tr>
                         {/* <th>#</th> */}

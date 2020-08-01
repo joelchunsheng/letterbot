@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 class UpcomingRobotTasks extends React.Component {
     constructor(props) {
         super(props)
-        this.ref = fire.firestore().collection("Robot").doc(this.props.valueFromParent).collection("Task");
+        this.ref = fire.firestore().collection("Robot").doc(this.props.valueFromParent).collection("Task").orderBy("datetimeadded", "asc");
         this.unsubscribe = null
         this.state ={
             tasks : []

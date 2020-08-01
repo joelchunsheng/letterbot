@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 class ShowEndpoints extends React.Component {
     constructor(props) {
         super(props)
-        this.ref = fire.firestore().collection("Endpoints").orderBy("datetimeadded", "asc")
+        this.ref = fire.firestore().collection("Endpoints").orderBy("location", "asc")
         this.unsubscribe = null
         this.state = {
             endpoints : []
@@ -24,12 +24,11 @@ class ShowEndpoints extends React.Component {
     onCollectionUpdate = (querySnapshot) => {
         const endpoints = []
         querySnapshot.forEach((doc) => {
-            const {location, datetimeadded, id} = doc.data()
+            const {location, id} = doc.data()
             endpoints.push({
                key: doc.id,
                doc,
                location,
-               datetimeadded,
                id
             })
         })
@@ -45,7 +44,7 @@ class ShowEndpoints extends React.Component {
         console.log(DateTimeAdded);
         fire.firestore().collection("Robot").doc(this.props.valueFromParent).collection("Task").add({
             EndPoint,
-            datetimeadded: DateTimeAdded
+            datetimeadded: Date.now()
         })
     }
 
@@ -57,7 +56,7 @@ class ShowEndpoints extends React.Component {
                         {this.state.endpoints.map(endpoint =>
                         <ListGroup variant="flush">
                             <ListGroup.Item>
-                                <Button variant="primary" className="buttonSize" onClick={this.add.bind(this, endpoint.location, endpoint.datetimeadded)}><FontAwesomeIcon icon={faPlus} size="sm" className="iconSize"/></Button> {endpoint.location}</ListGroup.Item>
+                                <Button variant="primary" className="buttonSize" onClick={this.add.bind(this, endpoint.location)}><FontAwesomeIcon icon={faPlus} size="sm" className="iconSize"/></Button> {endpoint.location}</ListGroup.Item>
                         </ListGroup>
                             )}
                 </Card>

@@ -24,7 +24,7 @@ class AddEndpoint extends React.Component {
         const {location} = this.state;
         this.ref.add({
             location,
-            datetimeadded: Date.now()
+            // datetimeadded: Date.now()
         }).then((docRef)=>{
             this.setState({
                 location : ''
