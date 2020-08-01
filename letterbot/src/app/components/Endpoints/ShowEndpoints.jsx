@@ -45,11 +45,11 @@ class ShowEndpoints extends React.Component {
     render() {
         return(
             <div>
-                <Table striped bordered hover variant="dark">
+                <Table responsive >
                     <thead>
                         <tr>
                         <th>Name</th>
-                        <th>Endpoint ID</th>
+                        <th colSpan='2'>Endpoint ID</th>
                         </tr>
                     </thead>
                     <tbody>
