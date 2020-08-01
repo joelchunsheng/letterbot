@@ -10,9 +10,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 class ShowEndpoints extends React.Component {
     constructor(props) {
         super(props)
-        this.ref = fire.firestore().collection("Endpoints").orderBy("location", "asc")
+        this.ref = fire.firestore().collection("Endpoints").orderBy("datetimeadded", "asc")
         this.unsubscribe = null
-        this.state ={
+        this.state = {
             endpoints : []
         }
     }
@@ -24,11 +24,12 @@ class ShowEndpoints extends React.Component {
     onCollectionUpdate = (querySnapshot) => {
         const endpoints = []
         querySnapshot.forEach((doc) => {
-            const {location, id} = doc.data()
+            const {location, datetimeadded, id} = doc.data()
             endpoints.push({
                key: doc.id,
                doc,
                location,
+               datetimeadded,
                id
             })
         })
@@ -40,12 +41,13 @@ class ShowEndpoints extends React.Component {
     // this only adds endpoint to robot 2
     // need to figure out how to add to selected robot
     // also need to push with a time stemp
-    add(EndPoint){
-        fire.firestore().collection("Robot").doc("xFjz0vEXOC3n1afbxnsa").collection("Task").add({
-            EndPoint
+    add(EndPoint, DateTimeAdded){
+        console.log(DateTimeAdded);
+        fire.firestore().collection("Robot").doc(this.props.valueFromParent).collection("Task").add({
+            EndPoint,
+            datetimeadded: DateTimeAdded
         })
     }
-
 
     render() {
         return(
@@ -55,7 +57,7 @@ class ShowEndpoints extends React.Component {
                         {this.state.endpoints.map(endpoint =>
                         <ListGroup variant="flush">
                             <ListGroup.Item>
-                                <Button variant="primary" className="buttonSize" onClick={this.add.bind(this, endpoint.location)}><FontAwesomeIcon icon={faPlus} size="sm" className="iconSize"/></Button> {endpoint.location}</ListGroup.Item>
+                                <Button variant="primary" className="buttonSize" onClick={this.add.bind(this, endpoint.location, endpoint.datetimeadded)}><FontAwesomeIcon icon={faPlus} size="sm" className="iconSize"/></Button> {endpoint.location}</ListGroup.Item>
                         </ListGroup>
                             )}
                 </Card>

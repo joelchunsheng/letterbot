@@ -63,7 +63,10 @@ class Task extends React.Component {
                                     {this.state.robots.map(robot =>
                                     <Tab.Content>
                                         <Tab.Pane eventKey={`#${robot.key}`} className="taskborder">
-                                        <h3>Status : {robot.status}</h3>
+                                            {
+                                                // Centralize red/green
+                                            }
+                                        <h3>Status : <text style={{color: robot.status == "Running" ? 'green' : 'red'}}>{robot.status}</text></h3>
                                         <p>Current Task : {robot.currentTask}</p>
                                         <UpcomingRobotTasks valueFromParent={robot.key}/>
                                         </Tab.Pane>
@@ -74,7 +77,7 @@ class Task extends React.Component {
                                     {this.state.robots.map(robot =>
                                     <Tab.Content>
                                         <Tab.Pane eventKey={`#${robot.key}`}>
-                                        <ShowEndPoints/>
+                                        <ShowEndPoints valueFromParent={robot.key}/>
                                         </Tab.Pane>
                                     </Tab.Content>
                                     )}
