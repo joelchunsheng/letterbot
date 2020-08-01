@@ -3,6 +3,7 @@ import { Container, Row, Col, Navbar } from 'react-bootstrap';
 import './pages.css';
 import NavigationBar from '../components/navbar/navbar'
 import ShowUsers from '../components/User/ShowUsers';
+import AddUsers from '../components/User/AddUsers';
 
 
 class Users extends React.Component {
@@ -19,6 +20,7 @@ class Users extends React.Component {
                     </Col>
                     <Col  xs={10} id="page-content-wrapper">
                         <h1 className="pageName">Users Page</h1>
+                        <AddUsers/>
                         <ShowUsers/>
                     </Col> 
                 </Row>
