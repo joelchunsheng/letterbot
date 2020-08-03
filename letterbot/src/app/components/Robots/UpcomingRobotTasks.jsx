@@ -48,7 +48,7 @@ class UpcomingRobotTasks extends React.Component {
         
             <Container fluid>
                 <Row className="d-flex flex-column">
-                    <h5>Upcoming Tasks:</h5>
+                    <h5>Assigned Tasks:</h5>
                         {this.state.tasks.map(task =>
                             <ListGroup variant="flush">
                                 <ListGroup.Item className="pl-0 py-0">

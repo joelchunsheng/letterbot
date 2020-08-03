@@ -40,7 +40,6 @@ class Task extends React.Component {
 
     render() {
         return(
-        
             <Container fluid>
                 <Row>
                     <Col xs={2} id="sidebar-wrapper">      
