@@ -21,13 +21,14 @@ class ShowRobots extends React.Component {
     onCollectionUpdate = (querySnapshot) => {
         const robots = []
         querySnapshot.forEach((doc) => {
-            const {name, id, status} = doc.data()
+            const {name, id, status, currentTask} = doc.data()
             robots.push({
                key: doc.id,
                doc,
                name,
                id,
-               status 
+               status,
+               currentTask 
             })
         })
         this.setState({
@@ -38,14 +39,14 @@ class ShowRobots extends React.Component {
     render() {
         return(
             <div>
-                <Table striped bordered hover variant="dark">
+                <Table responsive>
                     <thead>
                         <tr>
                         {/* <th>#</th> */}
                         <th>Name</th>
                         <th>Robot ID</th>
                         <th>Status</th>
-                        <th>Action</th>
+                        <th>Current Task</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -55,11 +56,7 @@ class ShowRobots extends React.Component {
                             <td>{robot.name}</td>
                             <td>{robot.key}</td>
                             <td>{robot.status}</td>
-                            <td>
-                                <Link to={`/task#${robot.key}`}>Assign task</Link>
-                                <Link to={`/manualcontrol/${robot.key}`}>Manual control</Link>
-                            </td>
-
+                            <td>{robot.currentTask}</td>
                         </tr>
                         )}
 

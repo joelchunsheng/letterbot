@@ -22,7 +22,7 @@ class Dashboard extends React.Component {
                     <Col  xs={10} id="page-content-wrapper">
                         <h1 className="pageName">Dashboard</h1>
                         <ShowRobots/>
-                        <ActiveRobots/>
+                        {/* <ActiveRobots/> */}
                     </Col> 
                 </Row>
             </Container>

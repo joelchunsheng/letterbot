@@ -10,7 +10,7 @@ import Task from './app/pages/Task'
 import Users from './app/pages/Users'
 import fire from "./config/Fire"
 
-import Navbar from './app/components/navbar/navbar'
+import { Spinner } from 'react-bootstrap';
 import PrivateRoute from './PrivateRoute'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -41,7 +41,7 @@ class app extends Component{
         const { authenticated, loading } = this.state;
 
         if (loading) {
-            return <p>Loading..</p>;
+            return <Spinner animation="grow" />;
         }
 
         return(
