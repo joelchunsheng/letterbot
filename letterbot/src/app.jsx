@@ -41,7 +41,7 @@ class app extends Component{
         const { authenticated, loading } = this.state;
 
         if (loading) {
-            return <Spinner animation="grow" />;
+            return <Spinner style={{position: 'absolute', left: '50%', top: '45%'}} animation="grow" />;
         }
 
         return(

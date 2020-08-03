@@ -12,11 +12,11 @@ class ShowEndpoints extends React.Component {
         super(props)
         this.ref = fire.firestore().collection("Endpoints").orderBy("location", "asc")
         this.unsubscribe = null
-        var firstlist;
-        fire.firestore().collection("Robot").doc(this.props.valueFromParent).collection("Task").orderBy("datetimeadded", "asc").limit(1).get().then(querySnapshot => {firstlist = querySnapshot.docs[0].data().EndPoint})
+        // var firstlist;
+        // fire.firestore().collection("Robot").doc(this.props.valueFromParent).collection("Task").orderBy("datetimeadded", "asc").limit(1).get().then(querySnapshot => {firstlist = querySnapshot.docs[0].data().EndPoint})
         this.state = {
             endpoints : [],
-            firstlist : firstlist
+            // firstlist : firstlist
         }
 
         //console.log(this.state.firstlist)

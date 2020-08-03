@@ -2,6 +2,7 @@ import React from 'react'
 import { Container, Row, Col, Navbar } from 'react-bootstrap';
 import './pages.css';
 import NavigationBar from '../components/navbar/navbar'
+import ShowCurrentTask from '../components/Task/ShowCurrentTask';
 
 class Settings extends React.Component {
     constructor(props) {
@@ -17,6 +18,7 @@ class Settings extends React.Component {
                     </Col>
                     <Col  xs={10} id="page-content-wrapper">
                         <h1 className="pageName">Settings Page</h1>
+                        <ShowCurrentTask/>
                     </Col> 
                 </Row>
             </Container>

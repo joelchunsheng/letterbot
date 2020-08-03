@@ -4,7 +4,8 @@ import './pages.css';
 import fire from '../../config/Fire';
 import NavigationBar from '../components/navbar/navbar'
 import UpcomingRobotTasks from '../components/Robots/UpcomingRobotTasks'
-import ShowEndPoints from '../components/Task/showEndPoints'
+import ShowEndPoints from '../components/Task/ShowEndPoints'
+import ShowCurrentTask from '../components/Task/ShowCurrentTask';
 
 class Task extends React.Component {
     constructor(props) {
@@ -66,7 +67,10 @@ class Task extends React.Component {
                                                 // Centralize red/green
                                             }
                                         <h3>Status : <text style={{color: robot.status == "Running" ? 'green' : 'red'}}>{robot.status}</text></h3>
-                                        <p>Current Task : {robot.currentTask}</p>
+                                        <div>Current Task : 
+                                            <ShowCurrentTask valueFromParent={robot.key}/>
+                                        </div>
+                                        
                                         <UpcomingRobotTasks valueFromParent={robot.key}/>
                                         </Tab.Pane>
                                     </Tab.Content>

@@ -2,6 +2,7 @@ import React from 'react'
 import { Table } from 'react-bootstrap';
 import fire from '../../../config/Fire';
 import {Link} from 'react-router-dom'
+import ShowCurrentTask from '../Task/ShowCurrentTask';
 
 
 class ShowRobots extends React.Component {
@@ -56,7 +57,7 @@ class ShowRobots extends React.Component {
                             <td>{robot.name}</td>
                             <td>{robot.key}</td>
                             <td>{robot.status}</td>
-                            <td>{robot.currentTask}</td>
+                        <td>{<ShowCurrentTask valueFromParent={robot.key}/>}</td>
                         </tr>
                         )}
 
