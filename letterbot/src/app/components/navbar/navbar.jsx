@@ -35,9 +35,9 @@ const Side = props => {
                     <Nav.Link className="text-white" href="/endpoints"><FontAwesomeIcon icon={faFlag} size="md" className="text-white mr-3"/>End Points</Nav.Link>
                 </Nav.Item>
                
-                <Nav.Item className="hover">
+                {/* <Nav.Item className="hover">
                     <Nav.Link className="text-white"href="/settings"><FontAwesomeIcon icon={faCog} size="md" className="text-white mr-3"/>Settings</Nav.Link>
-                </Nav.Item>
+                </Nav.Item> */}
                 
                 <Nav.Item className="hover bottom mb-3">
                     <Nav.Link className="text-white text-center" onClick={() => fire.auth().signOut()}><FontAwesomeIcon icon={faCog} size="md" className="text-white mr-3"/>Sign Out</Nav.Link>
