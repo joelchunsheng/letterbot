@@ -4,7 +4,7 @@ import './pages.css';
 import fire from '../../config/Fire';
 import NavigationBar from '../components/navbar/navbar'
 import UpcomingRobotTasks from '../components/Robots/UpcomingRobotTasks'
-import ShowEndPoints from '../components/Task/ShowEndPoints'
+import ShowEndPoints from '../components/Task/showEndPoints'
 import ShowCurrentTask from '../components/Task/ShowCurrentTask';
 
 class Task extends React.Component {
