@@ -2,6 +2,7 @@ import React from 'react'
 import { Container, Row, Col, Navbar } from 'react-bootstrap';
 import './pages.css';
 import NavigationBar from '../components/navbar/navbar'
+import Player from '../components/ManualControl/Player';
 
 class ManualControl extends React.Component {
     constructor(props) {
@@ -17,6 +18,7 @@ class ManualControl extends React.Component {
                     </Col>
                     <Col  xs={10} id="page-content-wrapper">
                         <h1 className="pageName">Manual Control Page</h1>
+                        <Player/>
                     </Col> 
                 </Row>
             </Container>
