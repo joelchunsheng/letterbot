@@ -8,6 +8,8 @@ import ManualControl from './app/pages/ManualControl'
 import Settings from './app/pages/Settings'
 import Task from './app/pages/Task'
 import Users from './app/pages/Users'
+import Password from './app/pages/Password'
+
 import fire from "./config/Fire"
 
 import { Spinner } from 'react-bootstrap';
@@ -48,6 +50,8 @@ class app extends Component{
             <Router>
                 <div>
                     <Route exact path="/" component={LandingPage} />
+
+                    <Route exact path="/forgotPassword" component={Password} />
 
                     <PrivateRoute path="/dashboard" component={Dashboard} authenticated={authenticated} />
 

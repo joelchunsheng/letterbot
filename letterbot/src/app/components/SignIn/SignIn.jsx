@@ -34,7 +34,7 @@ class SignIn extends Component {
                     <input onChange={this.handleChange} id="email" type="email" placeholder="email"/>
                     <input onChange={this.handleChange} id="password" type="password" placeholder="password"/>
                     <p>
-                    <a>Forgot password?</a>
+                    <a href='/forgotPassword'>Forgot password?</a>
                     </p>
                     <button type="submit">login</button>
                 </form>
