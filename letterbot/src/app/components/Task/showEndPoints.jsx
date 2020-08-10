@@ -1,7 +1,6 @@
 import React from 'react'
-import { Table, ListGroup, Card, Button } from 'react-bootstrap';
+import { ListGroup, Card, Button } from 'react-bootstrap';
 import fire from '../../../config/Fire';
-import {Link} from 'react-router-dom'
 import './showEndPoints.css'
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

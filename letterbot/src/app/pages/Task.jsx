@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Col, Navbar, Tab, ListGroup } from 'react-bootstrap';
+import { Container, Row, Col, Tab, ListGroup } from 'react-bootstrap';
 import './pages.css';
 import fire from '../../config/Fire';
 import NavigationBar from '../components/navbar/navbar'

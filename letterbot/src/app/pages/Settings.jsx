@@ -1,13 +1,11 @@
 import React from 'react'
-import { Container, Row, Col, Navbar } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import './pages.css';
 import NavigationBar from '../components/navbar/navbar'
 import ShowCurrentTask from '../components/Task/ShowCurrentTask';
 
 class Settings extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+
 
     render() {
         return(

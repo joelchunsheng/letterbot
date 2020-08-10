@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import fire from '../../../config/Fire';
-import { withRouter } from "react-router";
 import './ForgotPassword.css';
-import { Alert } from 'react-bootstrap';
+// import { Alert } from 'react-bootstrap';
 
 class ForgotPassword extends Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
     handleSignIn = async event => {
         event.preventDefault();

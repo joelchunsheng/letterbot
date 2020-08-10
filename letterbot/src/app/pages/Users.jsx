@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Col, Navbar } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import './pages.css';
 import NavigationBar from '../components/navbar/navbar'
 import ShowUsers from '../components/User/ShowUsers';
@@ -7,10 +7,6 @@ import AddUsers from '../components/User/AddUsers';
 
 
 class Users extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
     render() {
         return(
             <Container fluid>

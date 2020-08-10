@@ -1,7 +1,5 @@
 import React from 'react'
-import { Table } from 'react-bootstrap';
 import fire from '../../../config/Fire';
-import {Link} from 'react-router-dom'
 
 
 class ShowCurrentTask extends React.Component {
