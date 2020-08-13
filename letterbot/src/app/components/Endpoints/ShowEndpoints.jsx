@@ -1,7 +1,9 @@
 import React from 'react'
 import { Table } from 'react-bootstrap';
 import fire from '../../../config/Fire';
-
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import './endpoint.css'
 
 class ShowEndpoints extends React.Component {
     constructor(props) {
@@ -44,8 +46,8 @@ class ShowEndpoints extends React.Component {
     render() {
         return(
             <div>
-                <Table responsive >
-                    <thead>
+                <Table responsive className="table-striped">
+                    <thead className="thead-dark">
                         <tr>
                         <th>Name</th>
                         <th colSpan='2'>Endpoint ID</th>
@@ -58,7 +60,7 @@ class ShowEndpoints extends React.Component {
                             <td>{endpoint.location}</td>
                             <td>{endpoint.key}</td>
                             <td>
-                                <button class="btn btn-danger" onClick={this.delete.bind(this, endpoint.key)}>Delete</button>
+                                <button class="btn btnDel" onClick={this.delete.bind(this, endpoint.key)} style={{color:'red'}}><FontAwesomeIcon icon={faTrash} size="sm" style={{color:'red'}} className="mr-2"/>Delete</button>
                             </td>
                         </tr>
                         )}

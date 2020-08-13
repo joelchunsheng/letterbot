@@ -15,7 +15,7 @@ class Dashboard extends React.Component {
                         <NavigationBar />
                     </Col>
                     <Col  xs={10} id="page-content-wrapper">
-                        <h1 className="pageName">Dashboard</h1>
+                        <h1 className="display-4 pt-5 pb-3">Dashboard</h1>
                         <ShowRobots/>
                         {/* <ActiveRobots/> */}
                     </Col> 

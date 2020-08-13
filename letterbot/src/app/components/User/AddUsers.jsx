@@ -1,6 +1,9 @@
 import React from 'react'
 import { Button, Modal, Form } from 'react-bootstrap';
 import fire from '../../../config/Fire';
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import './addUsers.css'
 
 // need find out how to close popup and run handlesignup at the same time
 
@@ -74,10 +77,11 @@ function AddUsers() {
   
     return (
       <>
-        <Button variant="primary" onClick={() => setModalShow(true)}>
-          Add User
+      <div className="d-flex justify-content-end">
+        <Button variant="primary" onClick={() => setModalShow(true)} style={{color: "#3f506d"}} className="buttonSize">
+          <FontAwesomeIcon icon={faPlus} size="sm" className="iconcoloradd"/> Add User
         </Button>
-  
+      </div>
         <MyVerticallyCenteredModal
           show={modalShow}
           onHide={() => setModalShow(false)}

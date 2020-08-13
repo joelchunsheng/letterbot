@@ -36,8 +36,8 @@ class ShowUsers extends React.Component {
     render() {
         return(
             <div>
-                <Table responsive>
-                    <thead>
+                <Table responsive className="table-striped">
+                    <thead className="thead-dark">
                         <tr>
                         {/* <th>#</th> */}
                         <th>Name</th>

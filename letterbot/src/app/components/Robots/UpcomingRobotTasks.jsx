@@ -46,13 +46,13 @@ class UpcomingRobotTasks extends React.Component {
     render() {
         return(
         
-            <Container fluid>
+            <Container fluid className="pt-4">
                 <Row className="d-flex flex-column">
                     <h5>Assigned Tasks:</h5>
                         {this.state.tasks.map(task =>
                             <ListGroup variant="flush">
                                 <ListGroup.Item className="pl-0 py-0">
-                                    <Button variant="primary" className="buttonSize" onClick={this.delete.bind(this, task.key)}><FontAwesomeIcon icon={faMinus} size="sm" className="iconcolor"/></Button> {task.EndPoint}
+                                    <Button variant="primary" className="buttonSize" onClick={this.delete.bind(this, task.key)}><FontAwesomeIcon icon={faMinus} size="sm" className="iconcolor"/></Button>{task.EndPoint}
                                 </ListGroup.Item>
                             </ListGroup>
                         )}
