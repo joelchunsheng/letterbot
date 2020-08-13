@@ -48,9 +48,9 @@ class Task extends React.Component {
                     </Col>
                     <Col  xs={10} id="page-content-wrapper">
                         <h1 className="pageName">Task Page</h1>
-                        <Tab.Container id="list-group-tabs-example">
+                        <Tab.Container id="list-group-tabs-example" defaultActiveKey="#3OMLkhPwZVfPoqVrEf8F">
                             <Row>
-                                <Col sm={4}>
+                                <Col sm={3}>
                                 {this.state.robots.map(robot =>
                                 <ListGroup>
                                     <ListGroup.Item action href={`#${robot.key}`}>
