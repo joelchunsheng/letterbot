@@ -48,8 +48,8 @@ class Task extends React.Component {
                         <NavigationBar />
                     </Col>
                     <Col  xs={10} id="page-content-wrapper">
-                        <h1 className="display-4 pt-5 pb-3">Task Page</h1>
-                        <Tab.Container id="list-group-tabs-example" >
+                        <h1 id='headers' className="display-4 pt-5 pb-3">Task Page</h1>
+                        <Tab.Container id="list-group-tabs-example" defaultActiveKey="#3OMLkhPwZVfPoqVrEf8F">
                             <Row>
                                 <Col sm={4}>
                                 {this.state.robots.map(robot =>

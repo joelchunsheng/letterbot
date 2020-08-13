@@ -8,6 +8,8 @@ import NavigationBar from '../components/navbar/navbar'
 class Dashboard extends React.Component {
 
     render() {
+
+
         return(
             <Container fluid>
                 <Row>
@@ -15,7 +17,7 @@ class Dashboard extends React.Component {
                         <NavigationBar />
                     </Col>
                     <Col  xs={10} id="page-content-wrapper">
-                        <h1 className="display-4 pt-5 pb-3">Dashboard</h1>
+                        <h1 id='headers' className="display-4 pt-5 pb-3">Dashboard</h1>
                         <ShowRobots/>
                         {/* <ActiveRobots/> */}
                     </Col> 

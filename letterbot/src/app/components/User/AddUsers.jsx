@@ -14,6 +14,10 @@ function MyVerticallyCenteredModal(props) {
     const [password, setPassword] = React.useState('');
 
     const handleSignUp = async event => {
+      if (name == ''){
+        alert("Name field is empty!")
+      }
+      else{
         event.preventDefault();
         try {
           const user = await fire
@@ -24,9 +28,11 @@ function MyVerticallyCenteredModal(props) {
                     email
                 });
             })
+            
         } catch (error) {
           alert(error);
         }
+      }
     };
 
     return (

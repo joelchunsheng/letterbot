@@ -3,7 +3,7 @@ import {Nav} from "react-bootstrap";
 import { withRouter } from "react-router";
 import './navbar.css'
 import fire from '../../../config/Fire';
-import { faHome, faTasks, faLocationArrow, faUser, faFlag, faCog} from "@fortawesome/free-solid-svg-icons";
+import { faHome, faTasks, faLocationArrow, faUser, faFlag, faCog, faSignOutAlt} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Side = props => {
@@ -39,7 +39,7 @@ const Side = props => {
                 </Nav.Item> */}
                 
                 <Nav.Item className="hover bottom mb-3">
-                    <Nav.Link className="text-white text-center" onClick={() => fire.auth().signOut()}><FontAwesomeIcon icon={faCog} size="md" className="text-white mr-3"/>Sign Out</Nav.Link>
+                    <Nav.Link className="text-white text-center" onClick={() => fire.auth().signOut()}><FontAwesomeIcon icon={faSignOutAlt} size="md" className="text-white mr-3"/>Sign Out</Nav.Link>
                 </Nav.Item>
             </Nav>
         );

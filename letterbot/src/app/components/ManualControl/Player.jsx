@@ -52,15 +52,12 @@ class Player extends React.Component {
 
 
     render() {
-        const videoStyle ={
-            width: 500,
-            height: 360,
-            background: '#000',
+        const guideStyle ={
+            width: 650,
         }
 
         return(
             <div>
-                {/* <video style={videoStyle} ref={(player) => this.player = player} autoPlay={true}/> */}
                 <Tab.Container id="list-group-tabs-example" defaultActiveKey="#3OMLkhPwZVfPoqVrEf8F">
                 <Row>
                     <Col sm={3}>
@@ -87,12 +84,11 @@ class Player extends React.Component {
                         </Tab.Content>
                         )}
 
-                        <Alert variant='secondary'>
+                        <Alert variant='secondary' style={guideStyle}>
                             <Alert.Heading>Movement Controls</Alert.Heading>
                             <Table responsive>
                                 <thead>
                                     <tr>
-                                    <th>#</th>
                                     <th>Arrow Up</th>
                                     <th>Arrow Down</th>
                                     <th>Arrow Left</th>
@@ -101,9 +97,10 @@ class Player extends React.Component {
                                 </thead>
                                 <tbody>
                                     <tr>
-                                    <td>1</td>
-                                    <td>1</td>
-
+                                    <td>Forward</td>
+                                    <td>Backward</td>
+                                    <td>Left</td>
+                                    <td>Right</td>
                                     </tr>
                                 </tbody>
                             </Table>
