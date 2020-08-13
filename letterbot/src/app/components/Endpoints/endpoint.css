@@ -1,0 +1,15 @@
+.btn-primary{
+    background: #3f506d !important;
+    border: transparent !important;
+    outline: none !important;
+}
+
+.btn-primary:active{
+    border:0px !important;
+    outline: none !important;
+}
+
+.btndel{
+    background-color: transparent !important;
+    color: #f70f0f !important;
+}

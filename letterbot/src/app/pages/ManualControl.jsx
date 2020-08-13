@@ -15,7 +15,7 @@ class ManualControl extends React.Component {
                         <NavigationBar />
                     </Col>
                     <Col  xs={10} id="page-content-wrapper">
-                        <h1 className="pageName">Manual Control Page</h1>
+                        <h1 className="display-4 pt-5 pb-3">Manual Control Page</h1>
                         <Player/>
                     </Col> 
                 </Row>

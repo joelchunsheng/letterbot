@@ -14,3 +14,13 @@
     padding: 10px;
 
 }
+
+.activePane{
+    background: transparent;
+}
+
+.list-group-item.active{
+    background: #3f506d !important;
+    border: transparent !important;
+    outline: transparent !important;
+}

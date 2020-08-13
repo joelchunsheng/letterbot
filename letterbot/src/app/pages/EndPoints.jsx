@@ -17,9 +17,12 @@ class EndPoints extends React.Component {
                         <NavigationBar />
                     </Col>
                     <Col  xs={10} id="page-content-wrapper">
-                        <h1 className="pageName">End Points Page</h1>
-                        <ShowEndpoints/>
+                        <h1 className="display-4 pt-5 pb-3">End Points Page</h1>
+                        <hr style={{border:"1px solid black", width:"80%"}} className="mt-5"></hr>
                         <AddEndpoint/>
+                        <hr style={{border:"1px solid black", width:"80%"}} className="mb-5"></hr>
+                        <ShowEndpoints/>
+
                     </Col> 
                 </Row>
             </Container>

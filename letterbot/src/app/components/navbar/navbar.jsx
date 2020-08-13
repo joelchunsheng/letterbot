@@ -3,14 +3,14 @@ import {Nav} from "react-bootstrap";
 import { withRouter } from "react-router";
 import './navbar.css'
 import fire from '../../../config/Fire';
-import { faHome, faTasks, faLocationArrow, faUser, faFlag, faCog } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faTasks, faLocationArrow, faUser, faFlag, faCog} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Side = props => {
 
 
     return (
-            <Nav className="col-md-12 d-none d-md-block bg-nav sidebar px-0 py-0" activeKey="/dashboard">
+            <Nav className="col-md-12 d-none d-md-block bg-nav sidebar px-0 py-0" style={{position: "sticky"}} activeKey="/dashboard">
                 <div className="sidebar-sticky"></div>
                 <h2 className="pt-5 py-3 text-white text-center">Letterbot</h2>
                

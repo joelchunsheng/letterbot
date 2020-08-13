@@ -84,7 +84,7 @@ class ShowEndpoints extends React.Component {
         return(
             <div>
                 <Card>
-                    <Card.Header as="h5">Choose the next destination</Card.Header>
+                    <Card.Header as="h5" style={{color:"white", backgroundColor:"#3f506d"}}>Select next task</Card.Header>
                         {this.state.endpoints.map(endpoint =>
                         <ListGroup variant="flush">
                             <ListGroup.Item>

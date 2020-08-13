@@ -6,6 +6,7 @@ import NavigationBar from '../components/navbar/navbar'
 import UpcomingRobotTasks from '../components/Robots/UpcomingRobotTasks'
 import ShowEndPoints from '../components/Task/showEndPoints'
 import ShowCurrentTask from '../components/Task/ShowCurrentTask';
+import './pages.css'
 
 class Task extends React.Component {
     constructor(props) {
@@ -47,8 +48,8 @@ class Task extends React.Component {
                         <NavigationBar />
                     </Col>
                     <Col  xs={10} id="page-content-wrapper">
-                        <h1 className="pageName">Task Page</h1>
-                        <Tab.Container id="list-group-tabs-example">
+                        <h1 className="display-4 pt-5 pb-3">Task Page</h1>
+                        <Tab.Container id="list-group-tabs-example" >
                             <Row>
                                 <Col sm={4}>
                                 {this.state.robots.map(robot =>
@@ -61,13 +62,14 @@ class Task extends React.Component {
                                 </Col>
                                 <Col sm={5}>
                                     {this.state.robots.map(robot =>
-                                    <Tab.Content>
+                                    <Tab.Content className="activePane">
                                         <Tab.Pane eventKey={`#${robot.key}`} className="taskborder">
                                             {
                                                 // Centralize red/green
                                             }
-                                        <h3>Status : <text style={{color: robot.status == "Running" ? 'green' : 'red'}}>{robot.status}</text></h3>
-                                        <div>Current Task : 
+                                        <h3 className="display-4" style={{fontSize:"4vh"}}>Status : <text style={{color: robot.status == "Running" ? 'green' : 'red',fontWeight:'400'}}>{robot.status}</text></h3>
+                                        <div className="pt-2">
+                                            <h4 >Current Task : </h4>
                                             <ShowCurrentTask valueFromParent={robot.key}/>
                                         </div>
                                         
